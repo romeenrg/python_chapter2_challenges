@@ -49,18 +49,77 @@ order  = [1, 3, 2, 6, 1, 7, 8, 8, 8]
 # print(remove_nones_from_list(list))
 
 
-def unique_elements(list):
-    unique = []
-    for i in range(len(list)):
-        print("  ")
-        print(f'--- test run {i} ---')
-        print(f'current unique list : {unique}')
-        print(f'testing for {list[i]}')
-        if list[i] in unique:
-            print(f'{list[i]} is already in the list')
-        else: 
-            unique.append(list[i])
-            print(f'adding {list[i]} to the unique list')
-    return unique
+# def unique_elements(list):
+#     unique = []
+#     for i in range(len(list)):
+#         print("  ")
+#         print(f'--- test run {i} ---')
+#         print(f'current unique list : {unique}')
+#         print(f'testing for {list[i]}')
+#         if list[i] in unique:
+#             print(f'{list[i]} is already in the list')
+#         else: 
+#             unique.append(list[i])
+#             print(f'adding {list[i]} to the unique list')
+#     return unique
 
-print(unique_elements(order))
+# print(unique_elements(order))
+
+animals = {'cat': 'meow', 'dog': None, 'cow': 'moo'}
+
+print(animals.values())
+newdict = {}
+for key, value in animals.items():
+    
+    if value != None:
+        newdict[key] = value
+
+print(newdict)
+print(animals)
+# x = animals.values()
+# for i in x:
+#     print (x[i])
+# def remove_none(dictnon):
+    
+#     for i in range(len(dictnon)):
+#         print(dictnon)
+#         print (len(dictnon))
+#         print(i)
+
+
+# print(remove_none(animals))
+
+
+
+
+# # #######################################
+# def filter_func(pair):
+#     remove_this = None
+#     key, value = pair
+#     if value == remove_this:
+#         return False
+#     else:
+#         return True
+
+
+# def remove_None_online(mylist):
+#     f_dict = dict(filter(filter_func, (mylist).items()))
+#     return (f_dict)
+
+
+
+# print(remove_None_online(animals))
+
+
+
+
+
+
+
+# location = 'Aldgate East'
+# date_time = '2022/01/30 11:12'
+# def touch_in(location, date_time):
+#     newdict = {'entry point': location , 'time' :date_time}
+#     return newdict
+
+# print(touch_in(location, date_time))
