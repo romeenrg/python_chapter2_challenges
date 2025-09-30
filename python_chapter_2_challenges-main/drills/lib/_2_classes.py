@@ -53,6 +53,11 @@ class Greeter():
 #   > animal
 #   <Animal object at 0x7f8b8c0b8e80>
 
+class Animal(): 
+    def __init__(self):
+        print('animal')
+
+
 
 
 # Class name: Vehicle
@@ -66,7 +71,9 @@ class Greeter():
 #   > vehicle
 #   <Vehicle object at 0x7f8b8c0b8e80>
 
-
+class Vehicle():
+    def __init__(self):
+        self.vehicle = 'vehicle'
 
 # Class name: Cat
 # Purpose: miaows at the user
@@ -80,6 +87,14 @@ class Greeter():
 #   > cat = Cat()
 #   > cat.speak()
 #   'miaow'
+
+class Cat():
+    
+    def __init__(self):
+        pass
+    
+    def speak(self):
+        return 'miaow'
 
 
 
@@ -95,6 +110,12 @@ class Greeter():
 #   > dog = Dog()
 #   > dog.speak()
 #   'woof'
+
+class Dog():
+    def speak(self):
+        return 'woof'
+    pass
+
 
 
 
@@ -116,7 +137,13 @@ class Greeter():
 #   > string_formatter.lower_case('HELLO')
 #   'hello'
 
-
+class StringFormatter():
+    
+    def block_caps(self, string):
+        return string.upper()
+    
+    def lower_case(self, string):
+        return string.lower()
 
 # Class name: Calculator
 # Purpose: performs basic arithmetic
@@ -146,7 +173,19 @@ class Greeter():
 #   > calculator.divide(6, 2)
 #   3.0
 
-
+class Calculator():
+    
+    def add(self, num1, num2):
+        return num1 + num2 
+    
+    def multiply(self, num1, num2):
+        return num1 * num2 
+    
+    def subtract(self, num1, num2):
+        return num1 - num2 
+    
+    def divide(self, num1, num2):
+        return num1 / num2 
 
 # Class name: Apprentice
 # Purpose: represents an apprentice
@@ -172,7 +211,14 @@ class Greeter():
 #   > apprentice.format_details()
 #   'Rita Smith, June 2030'
 
+class Apprentice():
 
+    def __init__(self, name, cohort):
+        self.name = name
+        self.cohort = cohort
+    
+    def format_details(self):
+        return f'{self.name}, {self.cohort}'
 
 # Class name: Cohort
 # Purpose: represents a cohort
@@ -205,5 +251,27 @@ class Greeter():
 #   > cohort.calculate_duration()
 #   92
 
+class Cohort():
 
+    def __init__(self, name, start_date, end_date):
 
+        
+        startyear = int(start_date[0:4])
+        startmonth = int(start_date[5:7])
+        startday = int(start_date[8:10])
+        endyear = int(end_date[0:4])
+        endmonth = int(end_date[5:7])
+        endday = int(end_date[8:10])
+
+        self.name = name
+        self.start_date = datetime.date(startyear, startmonth,startday)
+        self.end_date = datetime.date(endyear, endmonth, endday)
+
+    def calculate_duration(self):
+        duration = self.end_date - self.start_date
+        string_duration = str(duration)
+        int_duration = int(string_duration[0])
+
+        return int_duration
+
+#wrong method?

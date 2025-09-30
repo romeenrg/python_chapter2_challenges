@@ -1,3 +1,4 @@
+import datetime
 # list = [2, 5, 3, 1, 4, -1, 2, -4, -100]
 
 # def lowest_number(mylist):
@@ -65,17 +66,19 @@ order  = [1, 3, 2, 6, 1, 7, 8, 8, 8]
 
 # print(unique_elements(order))
 
-animals = {'cat': 'meow', 'dog': None, 'cow': 'moo'}
+# animals = {'cat': 'meow', 'dog': None, 'cow': 'moo'}
 
-print(animals.values())
-newdict = {}
-for key, value in animals.items():
+# print(animals.values())
+# newdict = {}
+# for key, value in animals.items():
     
-    if value != None:
-        newdict[key] = value
+#     if value != None:
+#         newdict[key] = value
 
-print(newdict)
-print(animals)
+# print(newdict)
+# print(animals)
+
+
 # x = animals.values()
 # for i in x:
 #     print (x[i])
@@ -123,3 +126,46 @@ print(animals)
 #     return newdict
 
 # print(touch_in(location, date_time))
+
+
+# ------------CLASSES ------------
+
+
+
+
+# class StringFormatter():
+
+#     def block_caps(self):
+#         return self.upper()
+        
+
+# subject = StringFormatter()
+
+
+class Cohort():
+
+    def __init__(self, name, start_date, end_date):
+
+        
+        startyear = int(start_date[0:4])
+        startmonth = int(start_date[5:7])
+        startday = int(start_date[8:10])
+        endyear = int(end_date[0:4])
+        endmonth = int(end_date[5:7])
+        endday = int(end_date[8:10])
+
+        self.name = name
+        self.start_date = datetime.date(startyear, startmonth,startday)
+        self.end_date = datetime.date(endyear, endmonth, endday)
+
+    def calculate_duration(self):
+        duration = self.end_date - self.start_date
+        print(type(duration))
+        string_duration = str(duration)
+        int_duration = string_duration[0]
+        return int_duration
+
+subject = Cohort('January 2060', '2060-01-01', '2060-01-08')
+
+
+print(subject.calculate_duration())
